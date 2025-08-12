@@ -41,7 +41,7 @@ function Features() {
           Your Learning. Your Pace. Your Future.
         </h2>
         <div className="mt-8 md:mt-16 w-full mx-auto space-y-32">
-          {features.slice(0, 1).map((feature) => (
+          {features.slice(0, 2).map((feature) => (
             <div
               key={feature.category}
               className="flex flex-col md:flex-row items-center gap-x-20 gap-y-6 md:odd:flex-row-reverse">
@@ -77,11 +77,6 @@ function Features() {
               </Badge>
               <h4 className="my-3 text-3xl font-semibold tracking-tight">{features[2].title}</h4>
               <p className="text-muted-foreground text-[17px]">{features[2].details}</p>
-              <Button asChild className="mt-6 rounded-full min-w-40 text-[15px]">
-                <Link to={features[2].tutorialLink}>
-                  Learn More <ArrowRight />
-                </Link>
-              </Button>
             </div>
           </div>
         </div>
