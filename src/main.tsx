@@ -4,12 +4,6 @@ import App from "./App.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <main className="flex flex-col min-h-">
-      <div>
-        <App />
-      </div>
-
-      <footer>Footer</footer>
-    </main>
+    <App />
   </StrictMode>
 );

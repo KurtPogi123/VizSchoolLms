@@ -1,7 +1,6 @@
-import React from 'react';
-import NavBar from '../components/Navbar';
-import Footer from '../components/Footer';
-import Testimonials from '../components/Testimonials';
+import React from "react";
+import Footer from "../components/Footer";
+import Testimonials from "../components/Testimonials";
 
 const Hero: React.FC = () => {
   return (
@@ -46,20 +45,19 @@ const Hero: React.FC = () => {
         <div className="absolute bottom-1/3 left-1/3 text-white text-xl opacity-50 font-light">+</div>
       </div>
 
-      <NavBar />
-
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-8 text-center text-white pt-20 md:pt-0">
         {/* Main heading */}
         <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight mt-8 md:mt-0">
-          Empowering You to Learn<br />
+          Empowering You to Learn
+          <br />
           Online, Anytime, Anywhere
         </h1>
 
         {/* Call-to-action buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mb-8 mt-8">
           <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300 flex items-center justify-center gap-2">
-            Get Started 
+            Get Started
             <span>→</span>
           </button>
           <button className="border-2 border-white hover:bg-white hover:text-blue-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2">
@@ -68,53 +66,55 @@ const Hero: React.FC = () => {
           </button>
         </div>
 
-       {/* Three people with capsule shapes */}
-<div className="flex flex-row items-end justify-center gap-4 md:gap-16 mt-6 md:mt-8">
+        {/* Three people with capsule shapes */}
+        <div className="flex flex-col md:flex-row items-end justify-center gap-8 md:gap-12 mt-8">
+          {/* Person 1 - Child with book (Purple capsule) */}
+          <div className="relative">
+            {/* Purple capsule background */}
+            <div className="w-56 h-72 bg-purple-300 rounded-full"></div>
+            {/* Person image overlaid */}
+            <div className="absolute inset-0 flex items-end justify-center">
+              <img
+                src="/public/assets/child1.png"
+                alt="Child learning with book"
+                className="h-64 w-auto object-contain"
+                style={{ filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.2))" }}
+              />
+            </div>
+          </div>
 
-  {/* Person 1 */}
+          {/* Person 2 - Teen with laptop (Yellow capsule) - Taller */}
+          <div className="relative">
+            {/* Yellow capsule background */}
+            <div className="w-64 h-80 bg-yellow-300 rounded-full"></div>
+            {/* Person image overlaid */}
+            <div className="absolute inset-0 flex items-end justify-center">
+              <img
+                src="/public/assets/child3.png"
+                alt="Teen learning with laptop"
+                className="h-72 w-auto object-contain"
+                style={{ filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.2))" }}
+              />
+            </div>
+          </div>
 
-  <div className="relative flex-shrink-0">
-    <div className="w-24 h-32 md:w-64 md:h-80 bg-purple-300 rounded-full"></div>
-    <div className="absolute inset-0 flex items-end justify-center">
-      <img 
-        src="/assets/child1.png" 
-        alt="Child learning with book" 
-        className="h-28 md:h-72 w-auto object-contain"
-        style={{ filter: 'drop-shadow(0 5px 10px rgba(0,0,0,0.2))' }}
-      />
-    </div>
-  </div>
-
-  {/* Person 2 */}
-  <div className="relative flex-shrink-0">
-    <div className="w-28 h-36 md:w-72 md:h-88 bg-yellow-300 rounded-full"></div>
-    <div className="absolute inset-0 flex items-end justify-center">
-      <img 
-        src="/assets/child3.png" 
-        alt="Teen learning with laptop" 
-        className="h-32 md:h-80 w-auto object-contain"
-        style={{ filter: 'drop-shadow(0 5px 10px rgba(0,0,0,0.2))' }}
-      />
-    </div>
-  </div>
-
-  {/* Person 3 */}
-  <div className="relative flex-shrink-0">
-    <div className="w-24 h-32 md:w-64 md:h-80 bg-green-300 rounded-full"></div>
-    <div className="absolute inset-0 flex items-end justify-center">
-      <img 
-        src="/assets/child2.png" 
-        alt="Child learning with tablet" 
-        className="h-28 md:h-72 w-auto object-contain"
-        style={{ filter: 'drop-shadow(0 5px 10px rgba(0,0,0,0.2))' }}
-      />
-    </div>
-  </div>
-</div>
-
-
+          {/* Person 3 - Child with tablet (Green capsule) */}
+          <div className="relative">
+            {/* Green capsule background */}
+            <div className="w-56 h-72 bg-green-300 rounded-full"></div>
+            {/* Person image overlaid */}
+            <div className="absolute inset-0 flex items-end justify-center">
+              <img
+                src="/public/assets/child2.png"
+                alt="Child learning with tablet"
+                className="h-64 w-auto object-contain"
+                style={{ filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.2))" }}
+              />
+            </div>
+          </div>
+        </div>
       </div>
-<Testimonials/>
+      <Testimonials />
       <Footer />
     </div>
   );
