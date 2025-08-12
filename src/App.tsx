@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Navigate, Route, BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
+import Hero from "./pages/Hero";
 
 // ScrollToTop component to handle navigation scrolling
 function ScrollToTop() {
@@ -14,9 +15,17 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <div className="p-6 text-center">
-      <h1 className="text-4xl font-bold text-blue-600">Hello React + Tailwind + Vite!</h1>
-    </div>
+    <>
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Hero />} />
+
+          {/* Optional: Redirect unknown routes to the homepage */}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
