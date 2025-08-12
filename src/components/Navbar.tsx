@@ -1,36 +1,39 @@
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-white shadow-sm border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="sticky top-0 z-99 w-full bg-white/70 backdrop-blur-lg shadow-sm border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 md:py-3">
         <div className="flex items-center h-20">
           {/* Logo Section */}
           <div className="flex items-center md:justify-start justify-center flex-1 md:flex-none">
-            <a href="/">
+            <Link to="/">
               <img src="/assets/logo.png" alt="VidSchool Logo" className="w-20 h-20 object-contain" />
-            </a>
+            </Link>
           </div>
 
           {/* Navigation Menu - Desktop */}
           <div className="hidden md:flex items-center space-x-8 ml-8">
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">
+            <NavLink
+              to={"/about"}
+              className={({ isActive }) => (isActive ? "text-blue-600" : "hover:text-blue-600 font-medium")}>
               About
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">
+            </NavLink>
+            <NavLink to={"#"} className="text-gray-700 hover:text-blue-600 font-medium">
               Course
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">
+            </NavLink>
+            <NavLink to={"#"} className="text-gray-700 hover:text-blue-600 font-medium">
               Reviews
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">
+            </NavLink>
+            <NavLink to={"#"} className="text-gray-700 hover:text-blue-600 font-medium">
               Programmes
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">
+            </NavLink>
+            <NavLink to={"#"} className="text-gray-700 hover:text-blue-600 font-medium">
               Plans
-            </a>
+            </NavLink>
           </div>
 
           {/* Login Button - Desktop */}
@@ -59,21 +62,21 @@ const NavBar = () => {
       {isOpen && (
         <div className="md:hidden border-t border-gray-100">
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
-            <a href="#" className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">
+            <NavLink to={"#"} className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">
               About
-            </a>
-            <a href="#" className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">
+            </NavLink>
+            <NavLink to={"#"} className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">
               Course
-            </a>
-            <a href="#" className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">
+            </NavLink>
+            <NavLink to={"#"} className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">
               Reviews
-            </a>
-            <a href="#" className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">
+            </NavLink>
+            <NavLink to={"#"} className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">
               Programmes
-            </a>
-            <a href="#" className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">
+            </NavLink>
+            <NavLink to={"#"} className="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">
               Plans
-            </a>
+            </NavLink>
             <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-2 rounded-lg transition-colors duration-200 shadow-sm mt-2">
               Login
             </button>
