@@ -40,7 +40,7 @@ function Features() {
         <h2 className="text-primary text-4xl md:text-5xl md:leading-[3.5rem] font-bold tracking-tight max-w-xl md:text-center md:mx-auto">
           Your Learning. Your Pace. Your Future.
         </h2>
-        <div className="mt-8 md:mt-16 w-full mx-auto space-y-32">
+        <div className="mt-8 md:mt-16 w-full mx-auto space-y-16 md:space-y-24 lg:space-y-32">
           {features.slice(0, 2).map((feature) => (
             <div
               key={feature.category}
@@ -53,8 +53,8 @@ function Features() {
                 <Badge variant={"outline"} className="uppercase font-semibold">
                   {feature.category}
                 </Badge>
-                <h4 className="my-3 text-3xl font-semibold tracking-tight">{feature.title}</h4>
-                <p className="text-muted-foreground text-[17px]">{feature.details}</p>
+                <h4 className="my-3 text-2xl md:text-3xl font-bold tracking-tight">{feature.title}</h4>
+                <p className="text-muted-foreground text-sm md:text-[17px]">{feature.details}</p>
                 <Button asChild className="mt-6 rounded-full min-w-40 text-[15px]">
                   <Link to={feature.tutorialLink}>
                     Learn More <ArrowRight />
@@ -75,8 +75,8 @@ function Features() {
               <Badge variant={"outline"} className="uppercase font-semibold">
                 {features[2].category}
               </Badge>
-              <h4 className="my-3 text-3xl font-semibold tracking-tight">{features[2].title}</h4>
-              <p className="text-muted-foreground text-[17px]">{features[2].details}</p>
+              <h4 className="my-3 text-2xl md:text-3xl font-bold tracking-tight">{features[2].title}</h4>
+              <p className="text-muted-foreground text-sm md:text-[17px]">{features[2].details}</p>
             </div>
           </div>
         </div>
