@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../components/Footer";
 import Testimonials from "../components/Testimonials";
 
 const Hero: React.FC = () => {
@@ -75,7 +74,7 @@ const Hero: React.FC = () => {
             {/* Person image overlaid */}
             <div className="absolute inset-0 flex items-end justify-center">
               <img
-                src="/public/assets/child1.png"
+                src="/assets/child1.png"
                 alt="Child learning with book"
                 className="h-64 w-auto object-contain"
                 style={{ filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.2))" }}
@@ -90,7 +89,7 @@ const Hero: React.FC = () => {
             {/* Person image overlaid */}
             <div className="absolute inset-0 flex items-end justify-center">
               <img
-                src="/public/assets/child3.png"
+                src="/assets/child3.png"
                 alt="Teen learning with laptop"
                 className="h-72 w-auto object-contain"
                 style={{ filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.2))" }}
@@ -105,7 +104,7 @@ const Hero: React.FC = () => {
             {/* Person image overlaid */}
             <div className="absolute inset-0 flex items-end justify-center">
               <img
-                src="/public/assets/child2.png"
+                src="/assets/child2.png"
                 alt="Child learning with tablet"
                 className="h-64 w-auto object-contain"
                 style={{ filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.2))" }}
@@ -115,7 +114,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
       <Testimonials />
-      <Footer />
     </div>
   );
 };

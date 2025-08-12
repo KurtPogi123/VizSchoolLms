@@ -5,8 +5,8 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-white shadow-sm border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="sticky top-0 z-99 w-full bg-white/70 backdrop-blur-lg shadow-sm border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 md:py-4">
         <div className="flex items-center h-20">
           {/* Logo Section */}
           <div className="flex items-center md:justify-start justify-center flex-1 md:flex-none">

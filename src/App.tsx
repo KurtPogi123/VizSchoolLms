@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Navigate, Route, BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
 import NavBar from "./components/Navbar";
 
+import Footer from "./components/Footer";
 import Hero from "./pages/Hero";
 import About from "./pages/about";
 
@@ -32,7 +33,7 @@ function App() {
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </main>
     </Router>
   );
