@@ -47,9 +47,9 @@ const Hero: React.FC = () => {
       <NavBar/>
       
       {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-8 text-center text-white">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-8 text-center text-white pt-20 md:pt-0">
         {/* Main heading */}
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight mt-8 md:mt-0">
           Empowering You to Learn<br />
           Online, Anytime, Anywhere
         </h1>
@@ -66,37 +66,49 @@ const Hero: React.FC = () => {
           </button>
         </div>
         
-        {/* Three people images */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 mt-8">
-          {/* Person 1 - Child with book */}
+        {/* Three people with capsule shapes */}
+        <div className="flex flex-col md:flex-row items-end justify-center gap-8 md:gap-12 mt-8">
+          {/* Person 1 - Child with book (Purple capsule) */}
           <div className="relative">
-            <div className="w-48 h-48 bg-purple-300 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+            {/* Purple capsule background */}
+            <div className="w-56 h-72 bg-purple-300 rounded-full"></div>
+            {/* Person image overlaid */}
+            <div className="absolute inset-0 flex items-end justify-center">
               <img 
-                src="/api/placeholder/200/200" 
+                src="/public/assets/child1.png" 
                 alt="Child learning with book" 
-                className="w-full h-full object-cover"
+                className="h-64 w-auto object-contain"
+                style={{ filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.2))' }}
               />
             </div>
           </div>
           
-          {/* Person 2 - Teen with laptop */}
-          <div className="relative md:-mt-8">
-            <div className="w-52 h-52 bg-yellow-300 rounded-full overflow-hidden border-4 border-white shadow-2xl">
-              <img 
-                src="/api/placeholder/200/200" 
-                alt="Teen learning with laptop" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          
-          {/* Person 3 - Child with tablet */}
+          {/* Person 2 - Teen with laptop (Yellow capsule) - Taller */}
           <div className="relative">
-            <div className="w-48 h-48 bg-green-300 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+            {/* Yellow capsule background */}
+            <div className="w-64 h-80 bg-yellow-300 rounded-full"></div>
+            {/* Person image overlaid */}
+            <div className="absolute inset-0 flex items-end justify-center">
               <img 
-                src="/api/placeholder/200/200" 
+                src="/public/assets/child3.png" 
+                alt="Teen learning with laptop" 
+                className="h-72 w-auto object-contain"
+                style={{ filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.2))' }}
+              />
+            </div>
+          </div>
+          
+          {/* Person 3 - Child with tablet (Green capsule) */}
+          <div className="relative">
+            {/* Green capsule background */}
+            <div className="w-56 h-72 bg-green-300 rounded-full"></div>
+            {/* Person image overlaid */}
+            <div className="absolute inset-0 flex items-end justify-center">
+              <img 
+                src="/public/assets/child2.png" 
                 alt="Child learning with tablet" 
-                className="w-full h-full object-cover"
+                className="h-64 w-auto object-contain"
+                style={{ filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.2))' }}
               />
             </div>
           </div>
