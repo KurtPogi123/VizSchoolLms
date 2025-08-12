@@ -8,28 +8,28 @@ const Testimonials = () => {
       text: "VieSchool has been an amazing addition to my child's education. The virtual classes and interactive lessons keep her engaged, and she's learning skills beyond the regular school curriculum. ",
       name: "Maria D.",
       title: "Parent of a Grade 7 Student",
-      image: "/api/placeholder/300/200"
+      image: "public/assets/testimonial1.png"
     },
     {
       id: 2,
       text: "The personalized learning approach has transformed how my son approaches his studies. He's more confident and excited about learning new topics every day.",
       name: "John S.",
       title: "Parent of a Grade 5 Student",
-      image: "/api/placeholder/300/200"
+      image: "public/assets/testimonial2.png"
     },
     {
       id: 3,
       text: "As a teacher, I've seen remarkable improvement in my students' engagement levels. The interactive platform makes learning fun and accessible for everyone.",
       name: "Sarah M.",
       title: "Elementary School Teacher",
-      image: "/api/placeholder/300/200"
+      image: "public/assets/teacher.jpg"
     },
     {
       id: 4,
       text: "The flexibility of online learning combined with high-quality content has been perfect for our family's busy schedule. My daughter loves the gamified learning experience!",
       name: "David L.",
       title: "Parent of a Grade 4 Student",
-      image: "/api/placeholder/300/200"
+      image: "public/assets/testomonial3.jpg"
     }
   ];
 
