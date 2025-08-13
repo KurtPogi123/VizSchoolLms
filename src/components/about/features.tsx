@@ -1,5 +1,6 @@
 import Lottie from "lottie-react";
 import { ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import kidStudying from "../../../public/assets/about/kid-studying.json";
 import MaxWidthWrapper from "../max-width-wrapper";
@@ -37,12 +38,33 @@ function Features() {
   return (
     <MaxWidthWrapper className="min-h-screen flex items-center justify-center py-16 md:py-20 lg:py-24">
       <div className="max-w-screen-lg w-full py-10 px-6">
-        <h2 className="text-primary text-4xl md:text-5xl md:leading-[3.5rem] font-bold tracking-tight max-w-xl md:text-center md:mx-auto">
+        <motion.h2
+          initial={{ translateY: 10, opacity: 0 }}
+          whileInView={{ translateY: 0, opacity: 1 }}
+          transition={{
+            duration: 0.25,
+            scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+          }}
+          viewport={{
+            amount: "all",
+            once: true,
+          }}
+          className="text-primary text-4xl md:text-5xl md:leading-[3.5rem] font-bold tracking-tight max-w-xl md:text-center md:mx-auto">
           Your Learning. Your Pace. Your Future.
-        </h2>
+        </motion.h2>
         <div className="mt-8 md:mt-16 w-full mx-auto space-y-16 md:space-y-24 lg:space-y-32">
-          {features.slice(0, 2).map((feature) => (
-            <div
+          {features.slice(0, 2).map((feature, idx) => (
+            <motion.div
+              initial={{ translateY: 10, opacity: 0 }}
+              whileInView={{ translateY: 0, opacity: 1 }}
+              transition={{
+                duration: 0.25,
+                delay: 0.15 % idx,
+                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+              }}
+              viewport={{
+                once: true,
+              }}
               key={feature.category}
               className="flex flex-col md:flex-row items-center gap-x-20 gap-y-6 md:odd:flex-row-reverse">
               <div
@@ -61,10 +83,20 @@ function Features() {
                   </Link>
                 </Button>
               </div>
-            </div>
+            </motion.div>
           ))}
 
-          <div className="flex flex-col md:flex-row items-center gap-x-20 gap-y-6 md:odd:flex-row-reverse">
+          <motion.div
+            initial={{ translateY: 10, opacity: 0 }}
+            whileInView={{ translateY: 0, opacity: 1 }}
+            transition={{
+              duration: 0.25,
+              scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="flex flex-col md:flex-row items-center gap-x-20 gap-y-6 md:odd:flex-row-reverse">
             <Lottie
               className="w-full aspect-square bg-cover rounded-xl basis-1/2"
               animationData={features[2].asset}
@@ -78,7 +110,7 @@ function Features() {
               <h4 className="my-3 text-2xl md:text-3xl font-bold tracking-tight">{features[2].title}</h4>
               <p className="text-muted-foreground text-sm md:text-[17px]">{features[2].details}</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </MaxWidthWrapper>
