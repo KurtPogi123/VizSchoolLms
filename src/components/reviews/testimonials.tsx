@@ -121,8 +121,17 @@ function Testimonials() {
             onClick={() => seeMoreParentsAndStudentsTestimonials()}
             variant={"ghost"}
             size={"lg"}
-            className="text-primary font-extrabold text-2xl py-6 hover:-translate-y-1 cursor-pointer">
+            className="hidden md:flex mt-8 md:mt-12 text-primary font-extrabold text-2xl py-6 hover:-translate-y-1 cursor-pointer">
             <Plus className="stroke-4 size-6" /> More testimonials
+          </Button>
+        )}
+
+        {studentParentTestimonials.length < 24 && (
+          <Button
+            onClick={() => seeMoreParentsAndStudentsTestimonials()}
+            variant={"ghost"}
+            className="flex md:hidden mt-8 md:mt-12 text-primary font-extrabold text-xl md:text-2xl py-5 hover:-translate-y-1 cursor-pointer">
+            <Plus className="stroke-4 size-4" /> More testimonials
           </Button>
         )}
       </div>
