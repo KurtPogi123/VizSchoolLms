@@ -33,7 +33,7 @@ const NavBar = () => {
               Reviews
             </NavLink>
             <NavLink
-              to={"/programmes"}
+              to={"/our-programmes"}
               className={({ isActive }) => (isActive ? "text-blue-600" : "hover:text-secondary font-medium")}>
               Programmes
             </NavLink>
