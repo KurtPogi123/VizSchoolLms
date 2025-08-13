@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import kidStudying from "../../../public/assets/kid-studying.json";
+import kidStudying from "../../../public/assets/about/kid-studying.json";
 import MaxWidthWrapper from "../max-width-wrapper";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
@@ -13,7 +13,7 @@ const features = [
     details:
       "At VizSchool, we believe that education should be flexible, empowering, and accessible to every student. That’s why we offer a unique learning experience designed to meet learners where they are—at home, on the go, or anywhere in between.Every completed course comes with a Certificate of Completion, helping learners celebrate progress and showcase their achievements. And because we’re built with both students and families in mind, our easy-to-use tools make it simple for parents to stay involved and track their child’s growth.",
     tutorialLink: "#",
-    assetUrl: "/assets/kid.png",
+    assetUrl: "/assets/about/kid.png",
   },
   {
     category: "Education & Tutoring",
@@ -21,7 +21,7 @@ const features = [
     details:
       "Behind every VizSchool course is a team of passionate, certified educators—many from HFSE International School—who bring real classroom experience to the digital world. They're not just instructors; they’re mentors, focused on making each lesson engaging, relatable, and tailored to every learner's needs.Through interactive content, personalized feedback, and consistent guidance, our tutors go beyond teaching. With VizSchool, your child is never learning alone.",
     tutorialLink: "#",
-    assetUrl: "/assets/lady.png",
+    assetUrl: "/assets/about/lady.png",
   },
   {
     category: "About VizSchool",

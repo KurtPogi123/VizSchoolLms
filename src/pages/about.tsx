@@ -9,12 +9,8 @@ function About() {
   return (
     <>
       <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
-        <AnimatedMeshGradient 
-          primaryColor="#FD8735"
-          secondaryColor="#007AFF"
-          overlayOpacity={0.3}
-        />
-        
+        <AnimatedMeshGradient primaryColor="#FD8735" secondaryColor="#007AFF" overlayOpacity={0.3} />
+
         <MaxWidthWrapper className="relative z-10 space-y-6 text-center text-white">
           <Badge className="font-semibold rounded-full py-1 border-none bg-white/20 backdrop-blur-sm">
             Our Vision for Learning
@@ -27,7 +23,10 @@ function About() {
             mission is to remove barriers to education, empowering students to learn at their own pace.
           </p>
           <div className="flex items-center justify-center gap-4">
-            <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20">
+            <Button
+              variant="outline"
+              size="lg"
+              className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 hover:text-white">
               Hear from our community
               <ArrowUpRight className="!h-5 !w-5" />
             </Button>
