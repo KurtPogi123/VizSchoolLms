@@ -1,5 +1,5 @@
-import Blog from "../components/about/blog";
 import MaxWidthWrapper from "../components/max-width-wrapper";
+import Blog from "../components/reviews/blog";
 import Testimonials from "../components/reviews/testimonials";
 
 function Reviews() {
