@@ -3,7 +3,7 @@ import { buttonVariants } from "../ui/button";
 
 function Hero() {
   return (
-    <div className="z-10 max-w-screen-xl w-full mx-auto grid lg:grid-cols-2 gap-12 px-6 py-12">
+    <div className="z-10 max-w-screen-xl w-full mx-auto grid lg:grid-cols-2 gap-12 px-6">
       <div className="text-white">
         <div className="-space-y-1">
           <h1 className="mt-6 text-xl md:text-2xl font-bold">VizSchool</h1>

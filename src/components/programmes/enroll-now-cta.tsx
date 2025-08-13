@@ -11,7 +11,7 @@ function EnrollNowCTA() {
       <Card id="sign-up" className="mt-[-104px] pt-0 overflow-hidden rounded-3xl scroll-m-48">
         <CardHeader className="flex justify-between items-end bg-muted p-4">
           <div className="inline-block space-y-2">
-            <Badge className="uppercase rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors bg-primary/10 text-primary">
+            <Badge className="rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors bg-primary/10 text-primary">
               Secure a slot now
             </Badge>
             <CardTitle className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">Sign up now</CardTitle>
@@ -28,7 +28,7 @@ function EnrollNowCTA() {
         </CardContent>
         <CardFooter>
           <p className="text-sm text-muted-foreground">
-            By submitting your phone number, we have your permission to contact you regarding Geniebook. See our{" "}
+            By submitting your phone number, we have your permission to contact you regarding VizSchool. See our{" "}
             <span className="underline font-medium">Privacy Policy</span>.
           </p>
         </CardFooter>

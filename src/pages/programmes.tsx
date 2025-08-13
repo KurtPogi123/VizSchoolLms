@@ -114,7 +114,7 @@ function EnrollNowCTAMobile() {
         <EnrollNowForm />
         <DrawerFooter className="pt-0">
           <p className="text-pretty text-xs text-muted-foreground">
-            By submitting your phone number, we have your permission to contact you regarding Geniebook. See our{" "}
+            By submitting your phone number, we have your permission to contact you regarding VizSchool. See our{" "}
             <span className="underline font-medium">Privacy Policy</span>.
           </p>
         </DrawerFooter>

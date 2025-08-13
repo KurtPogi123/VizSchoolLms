@@ -36,7 +36,7 @@ function EnrollNowForm() {
           control={form.control}
           name="phone_number"
           render={({ field }) => (
-            <FormItem className="w-11/12 mx-auto">
+            <FormItem>
               <FormControl>
                 <PhoneInput placeholder="91234567" {...field} defaultCountry="SG" international />
               </FormControl>
@@ -48,7 +48,7 @@ function EnrollNowForm() {
           control={form.control}
           name="parent_name"
           render={({ field }) => (
-            <FormItem className="w-11/12 mx-auto">
+            <FormItem>
               <FormControl>
                 <Input placeholder="Enter parent name" className="text-sm xl:!text-base py-5 md:py-6" {...field} />
               </FormControl>
@@ -63,7 +63,7 @@ function EnrollNowForm() {
             <FormItem>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
-                  <SelectTrigger className="w-11/12 mx-auto text-sm xl:!text-base py-5 md:py-6">
+                  <SelectTrigger className="w-11/12 text-sm xl:!text-base py-5 md:py-6">
                     <SelectValue placeholder="Select child’s academic level" />
                   </SelectTrigger>
                 </FormControl>
