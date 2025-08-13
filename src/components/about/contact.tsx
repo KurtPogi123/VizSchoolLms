@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 // Declare global grecaptcha
 declare global {
@@ -19,12 +20,12 @@ const Contact = () => {
     message: '',
     captchaToken: ''
   });
-  
+
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [captchaError, setCaptchaError] = useState('');
   const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
-  
+
   const recaptchaRef = useRef<HTMLDivElement>(null);
   const widgetId = useRef<number | null>(null);
 
@@ -35,12 +36,10 @@ const Contact = () => {
       return;
     }
 
-    // Create callback function
     window.onRecaptchaLoad = () => {
       setRecaptchaLoaded(true);
     };
 
-    // Load reCAPTCHA script
     const script = document.createElement('script');
     script.src = 'https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit';
     script.async = true;
@@ -48,7 +47,6 @@ const Contact = () => {
     document.head.appendChild(script);
 
     return () => {
-      // Cleanup
       if (document.head.contains(script)) {
         document.head.removeChild(script);
       }
@@ -62,9 +60,7 @@ const Contact = () => {
   useEffect(() => {
     if (recaptchaLoaded && recaptchaRef.current && !widgetId.current) {
       try {
-        // Using Google's test site key for development - replace with your actual site key
-     const siteKey = import.meta.env.VITE_CAPTCHA_SITE_KEY || '';
-        
+        const siteKey = import.meta.env.VITE_CAPTCHA_SITE_KEY || '';
         widgetId.current = window.grecaptcha.render(recaptchaRef.current, {
           sitekey: siteKey,
           callback: (token: string) => {
@@ -96,16 +92,11 @@ const Contact = () => {
       setCaptchaError('Please complete the reCAPTCHA verification');
       return false;
     }
-
- 
     try {
-
       await new Promise(resolve => setTimeout(resolve, 500));
-      
-   
       setCaptchaError('');
       return true;
-    } catch (error) {
+    } catch {
       setCaptchaError('Error verifying reCAPTCHA');
       return false;
     }
@@ -122,14 +113,12 @@ const Contact = () => {
     setIsSubmitting(true);
     setCaptchaError('');
 
-    // Verify CAPTCHA before submission
     const isCaptchaValid = await handleCaptchaVerify();
     if (!isCaptchaValid) {
       setIsSubmitting(false);
       return;
     }
 
-    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       alert('Message sent successfully!');
@@ -139,7 +128,6 @@ const Contact = () => {
   };
 
   const handleNewsletterSubmit = async () => {
-    // Handle newsletter subscription
     alert('Thank you for subscribing!');
     setNewsletterEmail('');
   };
@@ -163,7 +151,7 @@ const Contact = () => {
                   Fill out the form below and we'll get back to you as soon as possible.
                 </p>
               </div>
-              
+
               <div className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -196,7 +184,7 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     Name *
@@ -212,7 +200,7 @@ const Contact = () => {
                     placeholder="Your full name"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     Message *
@@ -248,8 +236,8 @@ const Contact = () => {
                     {captchaError && <p className="text-red-500 text-sm">{captchaError}</p>}
                   </div>
                 </div>
-                
-                <Button 
+
+                <Button
                   onClick={handleFormSubmit}
                   disabled={isSubmitting || !formData.captchaToken}
                   className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-medium transition-colors disabled:opacity-50"
@@ -269,20 +257,19 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Newsletter Signup */}
           <div className="lg:col-span-1">
             <div className="bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl p-8 text-white relative overflow-hidden">
-              {/* Decorative circles */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full"></div>
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-white/10 rounded-full"></div>
-              
+
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold mb-3">Our Newsletter</h3>
                 <p className="text-orange-100 mb-6 text-sm leading-relaxed">
                   Stay updated with our latest news, updates, and exclusive offers delivered straight to your inbox.
                 </p>
-                
+
                 <div className="space-y-4">
                   <div>
                     <input
@@ -294,7 +281,7 @@ const Contact = () => {
                       placeholder="Enter your email"
                     />
                   </div>
-                  
+
                   <div className="flex items-center space-x-2">
                     <input
                       type="checkbox"
@@ -306,8 +293,8 @@ const Contact = () => {
                       I agree to receive marketing emails
                     </label>
                   </div>
-                  
-                  <Button 
+
+                  <Button
                     onClick={handleNewsletterSubmit}
                     className="w-full bg-white text-orange-600 hover:bg-orange-50 font-medium py-3 rounded-lg transition-colors"
                   >
@@ -318,7 +305,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Contact Cards */}
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           <div className="bg-blue-500 rounded-2xl p-6 text-white">
@@ -330,7 +317,7 @@ const Contact = () => {
               Call us during business hours for immediate assistance with your inquiries and support needs.
             </p>
           </div>
-          
+
           <div className="bg-blue-500 rounded-2xl p-6 text-white">
             <div className="flex items-center justify-center w-12 h-12 bg-white/20 rounded-lg mb-4">
               <Mail className="h-6 w-6" />
@@ -340,7 +327,7 @@ const Contact = () => {
               Send us an email and we'll respond within 24 hours to help you with your questions.
             </p>
           </div>
-          
+
           <div className="bg-blue-500 rounded-2xl p-6 text-white">
             <div className="flex items-center justify-center w-12 h-12 bg-white/20 rounded-lg mb-4">
               <MapPin className="h-6 w-6" />
@@ -351,37 +338,23 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        
-        {/* Map Section */}
-        <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
-          <div className="h-80 bg-gradient-to-br from-blue-100 to-green-100 relative">
-            {/* Mock map with Singapore area */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-200 via-teal-100 to-green-200">
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="bg-white rounded-lg px-3 py-1 shadow-md border">
-                  <span className="text-sm font-medium text-gray-700">Singapore</span>
-                </div>
-                <div className="w-3 h-3 bg-red-500 rounded-full mx-auto mt-1"></div>
-              </div>
-              
-              {/* Mock water areas */}
-              <div className="absolute top-0 left-0 w-1/3 h-full bg-blue-300/30 rounded-r-full"></div>
-              <div className="absolute bottom-0 right-0 w-1/4 h-2/3 bg-blue-300/30 rounded-l-full"></div>
-              
-              {/* Mock land masses */}
-              <div className="absolute top-1/4 right-1/4 w-16 h-12 bg-green-200/50 rounded-lg transform rotate-12"></div>
-              <div className="absolute bottom-1/3 left-1/3 w-20 h-8 bg-green-200/50 rounded-lg transform -rotate-6"></div>
-            </div>
-            
-            {/* Map controls */}
-            <div className="absolute top-4 right-4 bg-white rounded-lg shadow-md">
-              <div className="flex flex-col">
-                <button className="p-2 hover:bg-gray-50 border-b text-gray-600 font-bold">+</button>
-                <button className="p-2 hover:bg-gray-50 text-gray-600 font-bold">-</button>
-              </div>
-            </div>
-          </div>
-        </div>
+
+     {/* Map Section */}
+<div className="bg-white rounded-2xl overflow-hidden shadow-sm">
+  <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
+    <GoogleMap
+      mapContainerStyle={{ width: "100%", height: "320px" }}
+      center={{ lat: 1.303841, lng: 103.882158 }}
+      zoom={16}
+    >
+      <Marker
+        position={{ lat: 1.303841, lng: 103.882158 }}
+        title="223 Mountbatten Road #02-23, Mountbatten Square, Singapore 398008"
+      />
+    </GoogleMap>
+  </LoadScript>
+</div>
+
       </div>
     </div>
   );

@@ -1,8 +1,6 @@
 import AnimatedMeshGradient from "../components/ui/animated-mesh-gradient";
 import MaxWidthWrapper from "../components/max-width-wrapper";
 import { Badge } from "../components/ui/badge";
-import { Button } from "../components/ui/button";
-import { Mail } from "lucide-react";
 import Contact from "../components/about/contact";
 
 const ContactUs = () => {
@@ -28,14 +26,7 @@ const ContactUs = () => {
             Whether you have a question, feedback, or just want to say hello, our team is ready to help.
           </p>
           <div className="flex items-center justify-center gap-4">
-            <Button
-              variant="outline"
-              size="lg"
-              className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20"
-            >
-              <Mail className="!h-5 !w-5 mr-2" />
-              Send us an email
-            </Button>
+           
           </div>
         </MaxWidthWrapper>
       </div>
