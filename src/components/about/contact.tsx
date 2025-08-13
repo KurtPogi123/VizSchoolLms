@@ -2,7 +2,17 @@ import { useState, useEffect, useRef } from 'react';
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+
+// Fix for Leaflet marker icons (Webpack/Vite issue)
+delete (L.Icon.Default.prototype as any)._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+});
 
 // Declare global grecaptcha
 declare global {
@@ -339,22 +349,26 @@ const Contact = () => {
           </div>
         </div>
 
-     {/* Map Section */}
-<div className="bg-white rounded-2xl overflow-hidden shadow-sm">
-  <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-    <GoogleMap
-      mapContainerStyle={{ width: "100%", height: "320px" }}
-      center={{ lat: 1.303841, lng: 103.882158 }}
-      zoom={16}
-    >
-      <Marker
-        position={{ lat: 1.303841, lng: 103.882158 }}
-        title="223 Mountbatten Road #02-23, Mountbatten Square, Singapore 398008"
-      />
-    </GoogleMap>
-  </LoadScript>
-</div>
-
+        {/* Map Section */}
+        <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
+<MapContainer
+  center={[1.308333, 103.879167]} // coordinates from Google Earth
+  zoom={18}
+  style={{ height: '320px', width: '100%' }}
+  aria-label="Map showing HFSE Singapore International School"
+>
+  <TileLayer
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    attribution='&copy; OpenStreetMap contributors'
+  />
+  <Marker position={[1.308333, 103.879167]}>
+    <Popup>
+      HFSE International School<br />
+      223 Mountbatten Road #02-23, Mountbatten Square, Singapore 398008
+    </Popup>
+  </Marker>
+</MapContainer>
+        </div>
       </div>
     </div>
   );
