@@ -31,7 +31,7 @@ function EnrollNowForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="grid items-center justify-center grid-cols-1 lg:grid-cols-4 gap-4 py-6 lg:py-8 lg:0">
+        className="grid items-center justify-center grid-cols-1 lg:grid-cols-4 gap-4 py-6 lg:py-0">
         <FormField
           control={form.control}
           name="phone_number"

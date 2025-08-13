@@ -3,7 +3,7 @@ import { PlayCircle, PlusIcon, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "../../lib/utils";
 import { Accordion, AccordionContent, AccordionItem } from "../ui/accordion";
-import { Button } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 
 const faq = [
   {
@@ -67,7 +67,7 @@ function FAQ() {
         </div>
       </div>
 
-      <div className="py-16 md:py-24">
+      <div id="watch-demo" className="py-16 md:py-24 scroll-mt-24">
         <div className="container mx-auto px-4 md:px-6 2xl:max-w-[1400px]">
           <div className="grid gap-8 lg:grid-cols-2 items-center">
             <div className="flex flex-col justify-center space-y-4">
@@ -136,9 +136,14 @@ function FAQ() {
                 </li>
               </ul>
 
-              <Button size="lg" className="mt-2 font-extrabold py-6 w-max">
+              <a
+                href="#sign-up"
+                className={buttonVariants({
+                  className: "!hidden lg:!flex !mt-2 !font-extrabold !py-6 !w-max",
+                  size: "lg",
+                })}>
                 Sign up now
-              </Button>
+              </a>
             </div>
             <div className="relative aspect-video rounded-xl overflow-hidden border shadow-lg">
               {isPlaying ? (

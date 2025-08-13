@@ -8,7 +8,7 @@ import EnrollNowForm from "./enroll-now-form";
 function EnrollNowCTA() {
   return (
     <MaxWidthWrapper className="hidden lg:block relative z-10 max-w-screen-xl">
-      <Card className="mt-[-104px] pt-0 overflow-hidden rounded-3xl">
+      <Card id="sign-up" className="mt-[-104px] pt-0 overflow-hidden rounded-3xl scroll-m-48">
         <CardHeader className="flex justify-between items-end bg-muted p-4">
           <div className="inline-block space-y-2">
             <Badge className="uppercase rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors bg-primary/10 text-primary">
