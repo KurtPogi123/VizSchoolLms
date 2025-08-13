@@ -1,4 +1,5 @@
 import { Plus } from "lucide-react";
+import { motion } from "motion/react";
 import { useState, type ComponentProps } from "react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback } from "../ui/avatar";
@@ -81,13 +82,33 @@ function Testimonials() {
   return (
     <div className="min-h-screen flex justify-center items-center py-16 md:py-20 lg:py-24">
       <div className="flex flex-col items-center">
-        <h2 className="text-primary mb-14 text-4xl md:text-5xl font-extrabold text-center tracking-tighter">
+        <motion.h2
+          initial={{ translateY: 10, opacity: 0 }}
+          whileInView={{ translateY: 0, opacity: 1 }}
+          transition={{
+            duration: 0.25,
+            scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="text-primary mb-14 text-4xl md:text-5xl font-extrabold text-center tracking-tighter">
           What parents & students say!
-        </h2>
+        </motion.h2>
         <div className="relative max-w-screen-xl mx-auto">
           <div className="w-full columns-1 md:columns-2 lg:columns-3 gap-8">
             {studentParentTestimonials.map((testimonial, idx) => (
-              <div
+              <motion.div
+                initial={{ translateY: 10, opacity: 0 }}
+                whileInView={{ translateY: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.25,
+                  delay: 0.25 % idx,
+                  scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                }}
+                viewport={{
+                  once: true,
+                }}
                 key={idx}
                 className="mb-8 rounded-xl p-6 break-inside-avoid shadow-[0px_0px_16px_0px_rgba(0,_0,_0,_0.1)]">
                 <div className="flex items-center justify-between">
@@ -109,7 +130,7 @@ function Testimonials() {
                   </Button>
                 </div>
                 <p className="mt-5 text-[17px]">{testimonial.testimonial}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
           {studentParentTestimonials.length < 24 && (
