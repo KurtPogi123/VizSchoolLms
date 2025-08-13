@@ -5,7 +5,13 @@ import NavBar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./pages/Hero";
 import About from "./pages/about";
+
 import ContactUs from "./pages/ContactUs";
+
+
+
+import Reviews from "./pages/reviews";
+
 
 // ScrollToTop component to handle navigation scrolling
 function ScrollToTop() {
@@ -30,6 +36,8 @@ function App() {
 
             <Route path="/about" element={<About />} />
               <Route path="/ContactUs" element={<ContactUs />} />
+
+            <Route path="/reviews" element={<Reviews />} />
 
             {/* Optional: Redirect unknown routes to the homepage */}
             <Route path="*" element={<Navigate to="/" />} />
