@@ -1,5 +1,5 @@
 import { CirclePlay } from "lucide-react";
-import { Button } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 
 function Hero() {
   return (
@@ -11,13 +11,25 @@ function Hero() {
         </div>
         <p className="mt-6 text-xl md:text-2xl font-bold">Engaging and effective learning made affordable</p>
         <div className="mt-6 flex items-center gap-4">
-          <Button size="lg" className="text-lg font-extrabold py-6 w-2/5">
+          <a
+            href="#sign-up"
+            className={buttonVariants({
+              size: "lg",
+              className: "!hidden lg:!flex !text-base lg:!text-lg !font-extrabold !py-5 lg:!py-6 !w-2/5",
+            })}>
             Sign up now
-          </Button>
+          </a>
 
-          <Button variant="outline" size="lg" className="text-lg font-extrabold py-6 w-2/5 bg-transparent">
+          <a
+            href="#watch-demo"
+            className={buttonVariants({
+              size: "lg",
+              variant: "outline",
+              className:
+                "!text-base lg:!text-lg !font-extrabold !py-5 lg:!py-6 !w-2/5 !bg-white/10 !backdrop-blur-sm !border-white/20 hover:!bg-white/20 ! hover:!text-white",
+            })}>
             <CirclePlay className="!h-5 !w-5" /> Watch Demo
-          </Button>
+          </a>
         </div>
       </div>
       <div
