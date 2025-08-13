@@ -1,7 +1,7 @@
 import AnimatedMeshGradient from "../components/ui/animated-mesh-gradient";
 import MaxWidthWrapper from "../components/max-width-wrapper";
 import { Badge } from "../components/ui/badge";
-import Contact from "../components/about/contact";
+import Contact from "../components/contact/contact";
 
 const ContactUs = () => {
   return (
