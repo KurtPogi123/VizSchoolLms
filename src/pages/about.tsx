@@ -26,7 +26,7 @@ function About() {
             <Button
               variant="outline"
               size="lg"
-              className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20">
+              className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 hover:text-white">
               Hear from our community
               <ArrowUpRight className="!h-5 !w-5" />
             </Button>
