@@ -117,23 +117,61 @@ const Hero: React.FC = () => {
           style={{ animationDelay: "4s" }}></div>
       </div>
 
+      {/* Custom CSS for fade-in animation */}
+      <style >{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .fade-in-heading {
+          animation: fadeInUp 1.2s ease-out forwards;
+        }
+        
+        .fade-in-buttons {
+          animation: fadeInUp 1s ease-out 0.5s forwards;
+          opacity: 0;
+        }
+        
+        .fade-in-person1 {
+          animation: fadeInUp 1.5s ease-out 0.8s forwards;
+          opacity: 0;
+        }
+        
+        .fade-in-person2 {
+          animation: fadeInUp 1.5s ease-out 1.2s forwards;
+          opacity: 0;
+        }
+        
+        .fade-in-person3 {
+          animation: fadeInUp 1.5s ease-out 1.6s forwards;
+          opacity: 0;
+        }
+      `}</style>
+
       {/* Main content with modern styling */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-8 text-center text-white pt-20 md:pt-0">
-        {/* Modern heading with enhanced typography */}
+        {/* Modern heading with enhanced typography and fade-in animation */}
         <div className="mb-6">
           <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-sm font-medium mb-6 border border-white/20">
             <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 animate-pulse"></span>
             Online Learning Platform
           </div>
-          <h1 className="text-5xl md:text-7xl font-black mb-4 leading-tight mt-8 md:mt-0 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+          <h1 className="fade-in-heading text-5xl md:text-7xl font-black mb-4 leading-tight mt-8 md:mt-0 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
             Empowering You to Learn
             <br />
             <span className="text-4xl md:text-6xl font-light">Online, Anytime, Anywhere</span>
           </h1>
         </div>
 
-        {/* Modern CTA buttons with glassmorphism */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-8 mt-8">
+        {/* Modern CTA buttons with glassmorphism and fade-in animation */}
+        <div className="fade-in-buttons flex flex-col sm:flex-row gap-4 mb-8 mt-8">
           <button className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-4 px-10 rounded-2xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
             Get Started
             <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -146,8 +184,8 @@ const Hero: React.FC = () => {
 
         {/* Three people with modern capsule shapes - keeping original alignment */}
         <div className="flex flex-row items-end justify-center gap-4 md:gap-16 mt-6 md:mt-8">
-          {/* Person 1 */}
-          <div className="relative flex-shrink-0 group">
+          {/* Person 1 - with fade-in animation */}
+          <div className="fade-in-person1 relative flex-shrink-0 group">
             <div className="w-24 h-32 md:w-64 md:h-80 bg-gradient-to-br from-purple-300 to-purple-400 rounded-full shadow-2xl transform group-hover:scale-105 transition-transform duration-300 border-4 border-white/20"></div>
             <div className="absolute inset-0 flex items-end justify-center">
               <img
@@ -159,8 +197,8 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Person 2 - Center (tallest) */}
-          <div className="relative flex-shrink-0 group">
+          {/* Person 2 - Center (tallest) - with fade-in animation */}
+          <div className="fade-in-person2 relative flex-shrink-0 group">
             <div className="w-28 h-36 md:w-72 md:h-88 bg-gradient-to-br from-yellow-300 to-yellow-400 rounded-full shadow-2xl transform group-hover:scale-105 transition-transform duration-300 border-4 border-white/20"></div>
             <div className="absolute inset-0 flex items-end justify-center">
               <img
@@ -172,8 +210,8 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Person 3 */}
-          <div className="relative flex-shrink-0 group">
+          {/* Person 3 - with fade-in animation */}
+          <div className="fade-in-person3 relative flex-shrink-0 group">
             <div className="w-24 h-32 md:w-64 md:h-80 bg-gradient-to-br from-green-300 to-green-400 rounded-full shadow-2xl transform group-hover:scale-105 transition-transform duration-300 border-4 border-white/20"></div>
             <div className="absolute inset-0 flex items-end justify-center">
               <img
