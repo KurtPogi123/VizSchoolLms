@@ -63,7 +63,7 @@ function EnrollNowForm() {
             <FormItem>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
-                  <SelectTrigger className="w-11/12 text-sm xl:!text-base py-5 md:py-6">
+                  <SelectTrigger className="w-full text-sm xl:!text-base py-5 md:py-6">
                     <SelectValue placeholder="Select child’s academic level" />
                   </SelectTrigger>
                 </FormControl>
@@ -86,7 +86,7 @@ function EnrollNowForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" size="lg" className="w-11/12 mx-auto lg:w-full text-lg font-extrabold py-7">
+        <Button type="submit" size="lg" className="w-full text-base lg:text-lg font-extrabold py-6 lg:py-7">
           Secure my slot
         </Button>
       </form>
