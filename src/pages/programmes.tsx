@@ -30,8 +30,10 @@ function Programmes() {
       <EnrollNowCTA />
       <EnrollNowCTAMobile />
       <Features />
-      <Courses />
-      <HowItWorks />
+      <div className="flex flex-col gap-12 md:gap-16 lg:gap-20 py-14 md:py-20">
+        <Courses />
+        <HowItWorks />
+      </div>
     </>
   );
 }

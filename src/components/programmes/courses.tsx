@@ -7,7 +7,7 @@ import SecondaryCourses from "./courses/secondary-couses";
 
 function Courses() {
   return (
-    <MaxWidthWrapper className="max-w-screen-xl py-14 md:py-20">
+    <MaxWidthWrapper className="max-w-screen-xl">
       <div className="text-center">
         <h2 className="text-primary text-3xl md:text-4xl !leading-[1.15] font-extrabold tracking-tight">
           VizSchool Courses
