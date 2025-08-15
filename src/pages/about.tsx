@@ -5,10 +5,22 @@ import MaxWidthWrapper from "../components/max-width-wrapper";
 import AnimatedMeshGradient from "../components/ui/animated-mesh-gradient";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
+import SEO from "../seo";
 
 function About() {
   return (
     <>
+      <SEO
+        title="About VizSchool LMS | Our Mission and Vision for Learning"
+        description="Discover the mission, vision, and story behind VizSchool LMS. Learn how we make education flexible, accessible, and empowering for every student."
+        canonical="https://yourdomain.com/about"
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          name: "About VizSchool LMS",
+          url: "https://yourdomain.com/about",
+        }}
+      />
       <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
         <AnimatedMeshGradient primaryColor="#FD8735" secondaryColor="#007AFF" overlayOpacity={0.3} />
 
