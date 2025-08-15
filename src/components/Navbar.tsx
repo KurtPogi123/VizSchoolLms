@@ -33,6 +33,16 @@ const NavBar = () => {
               className={({ isActive }) => (isActive ? "text-blue-600" : "hover:text-secondary font-medium")}>
               Reviews
             </NavLink>
+            <NavLink
+              to={"/blogs"}
+              className={({ isActive }) => (isActive ? "text-blue-600" : "hover:text-secondary font-medium")}>
+              Blogs
+            </NavLink>
+            <NavLink
+              to={"/contact-us"}
+              className={({ isActive }) => (isActive ? "text-blue-600" : "hover:text-secondary font-medium")}>
+              Contact Us
+            </NavLink>
           </div>
 
           {/* Login Button - Desktop */}
@@ -67,6 +77,12 @@ const NavBar = () => {
             </NavLink>
             <NavLink to={"/reviews"} className="block px-3 py-2 hover:text-secondary font-medium">
               Reviews
+            </NavLink>
+            <NavLink to="/blogs" className="block px-3 py-2 hover:text-secondary font-medium">
+              Blogs
+            </NavLink>
+            <NavLink to="/contact-us" className="block px-3 py-2 hover:text-secondary font-medium">
+              Contact Us
             </NavLink>
             <Button size={"lg"} className="w-full">
               Login
