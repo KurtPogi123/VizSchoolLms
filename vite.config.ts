@@ -4,7 +4,17 @@ import path from "path";
 import { defineConfig } from "vite";
 import ViteSitemap from "vite-plugin-sitemap";
 
-const routes = ["/", "/about", "/our-programmes", "/reviews", "/blogs", "/contact-us", "/faq", "/sitemap"];
+const routes = [
+  "/",
+  "/about",
+  "/our-programmes",
+  "/reviews",
+  "/blogs",
+  "/contact-us",
+  "/faq",
+  "/sitemap",
+  "/our-tutors",
+];
 
 // https://vite.dev/config/
 export default defineConfig({

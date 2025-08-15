@@ -10,6 +10,7 @@ import ContactUs from "./pages/ContactUs";
 
 import Blogs from "./pages/blogs";
 import FAQ from "./pages/faq";
+import OurTutors from "./pages/our-tutors";
 import Programmes from "./pages/programmes";
 import Reviews from "./pages/reviews";
 import Sitemap from "./pages/sitemap";
@@ -36,7 +37,7 @@ function App() {
             <Route path="/" element={<Hero />} />
 
             <Route path="/about" element={<About />} />
-            
+
             <Route path="/contact-us" element={<ContactUs />} />
 
             <Route path="/blogs" element={<Blogs />} />
@@ -44,6 +45,8 @@ function App() {
             <Route path="/reviews" element={<Reviews />} />
 
             <Route path="/sitemap" element={<Sitemap />} />
+
+            <Route path="/our-tutors" element={<OurTutors />} />
 
             <Route path="/faq" element={<FAQ />} />
 
