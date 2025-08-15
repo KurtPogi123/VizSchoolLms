@@ -5,7 +5,7 @@ import MaxWidthWrapper from "../components/max-width-wrapper";
 function Sitemap() {
   return (
     <MaxWidthWrapper className="max-w-4xl min-h-full flex items-center justify-center">
-      <div className="w-full space-y-12 py-16 md:py-20 lg:py-24">
+      <div className="w-full space-y-10 md:space-y-12 py-16 md:py-20 lg:py-24">
         {/* Page Title */}
         <motion.h2
           initial={{ translateY: 10, opacity: 0 }}
@@ -20,9 +20,9 @@ function Sitemap() {
         </motion.h2>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {/* Quick Links */}
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             <motion.h2
               initial={{ translateY: 10, opacity: 0 }}
               whileInView={{ translateY: 0, opacity: 1 }}
