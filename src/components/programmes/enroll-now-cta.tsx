@@ -18,10 +18,9 @@ function EnrollNowCTA() {
             <CardTitle className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">Sign up now</CardTitle>
           </div>
           <div className="flex items-center justify-center gap-2">
-            <Badge className="bg-[#71C5E8] px-4 text-sm rounded-full">English</Badge>
-            <Badge className="px-4 text-sm rounded-full">Math</Badge>
-            <Badge className="bg-[#C6579A] px-4 text-sm rounded-full">Science</Badge>
-            <Badge className="bg-[#615E9B] px-4 text-sm rounded-full">History</Badge>
+            <Badge className="bg-[#71C5E8] px-4 text-sm rounded-full flex-1">Primary</Badge>
+            <Badge className="bg-[#615E9B] px-4 text-sm rounded-full flex-1">Secondary</Badge>
+            <Badge className="bg-[#C6579A] px-4 text-sm rounded-full flex-1">Enrichment</Badge>
           </div>
         </CardHeader>
         <CardContent>
@@ -41,9 +40,11 @@ function EnrollNowCTA() {
 export function EnrollNowCTAMobile() {
   return (
     <Drawer>
-      <DrawerTrigger className="fixed z-20 bottom-4 flex lg:hidden" asChild>
+      <DrawerTrigger className="transition hover:-translate-y-1 fixed z-20 bottom-6 flex lg:hidden" asChild>
         <div className="w-full">
-          <Button size="lg" className="text-lg font-extrabold py-7 !px-8 w-11/12 mx-auto gap-2 hover:bg-orange-500">
+          <Button
+            size="lg"
+            className="cursor-pointer text-lg font-extrabold py-7 !px-8 w-11/12 mx-auto gap-2 hover:bg-orange-500">
             Secure a slot now <ArrowUpRight className="stroke-3 size-5" />
           </Button>
         </div>
@@ -59,10 +60,9 @@ export function EnrollNowCTAMobile() {
             </DrawerTitle>
           </div>
           <div className="flex items-center justify-center gap-2">
-            <Badge className="bg-[#71C5E8] text-xs rounded-full">English</Badge>
-            <Badge className="text-xs rounded-full">Math</Badge>
-            <Badge className="bg-[#C6579A] text-xs rounded-full">Science</Badge>
-            <Badge className="bg-[#615E9B] text-xs rounded-full">History</Badge>
+            <Badge className="bg-[#71C5E8] text-xs rounded-full flex-1">Primary</Badge>
+            <Badge className="bg-[#615E9B] text-xs rounded-full flex-1">Secondary</Badge>
+            <Badge className="bg-[#C6579A] text-xs rounded-full flex-1">Enrichment</Badge>
           </div>
         </DrawerHeader>
         <div className="px-6">

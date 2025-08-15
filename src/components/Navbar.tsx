@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { Button } from "./ui/button";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,32 +24,20 @@ const NavBar = () => {
               About
             </NavLink>
             <NavLink
-              to={"/courses"}
+              to={"/our-programmes"}
               className={({ isActive }) => (isActive ? "text-blue-600" : "hover:text-secondary font-medium")}>
-              Course
+              Programmes
             </NavLink>
             <NavLink
               to={"/reviews"}
               className={({ isActive }) => (isActive ? "text-blue-600" : "hover:text-secondary font-medium")}>
               Reviews
             </NavLink>
-            <NavLink
-              to={"/our-programmes"}
-              className={({ isActive }) => (isActive ? "text-blue-600" : "hover:text-secondary font-medium")}>
-              Programmes
-            </NavLink>
-            <NavLink
-              to={"/pricing-plans"}
-              className={({ isActive }) => (isActive ? "text-blue-600" : "hover:text-secondary font-medium")}>
-              Plans
-            </NavLink>
           </div>
 
           {/* Login Button - Desktop */}
           <div className="hidden md:flex items-center ml-auto">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-2 rounded-lg transition-colors duration-200 shadow-sm">
-              Login
-            </button>
+            <Button size={"lg"}>Login</Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -68,26 +57,20 @@ const NavBar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden border-t border-gray-100">
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
-            <NavLink to={"#"} className="block px-3 py-2 hover:text-secondary font-medium">
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            <NavLink to={"/about"} className="block px-3 py-2 hover:text-secondary font-medium">
               About
             </NavLink>
-            <NavLink to={"#"} className="block px-3 py-2 hover:text-secondary font-medium">
-              Course
-            </NavLink>
-            <NavLink to={"#"} className="block px-3 py-2 hover:text-secondary font-medium">
-              Reviews
-            </NavLink>
-            <NavLink to={"#"} className="block px-3 py-2 hover:text-secondary font-medium">
+            <NavLink to={"/our-programmes"} className="block px-3 py-2 hover:text-secondary font-medium">
               Programmes
             </NavLink>
-            <NavLink to={"#"} className="block px-3 py-2 hover:text-secondary font-medium">
-              Plans
+            <NavLink to={"/reviews"} className="block px-3 py-2 hover:text-secondary font-medium">
+              Reviews
             </NavLink>
-            <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-2 rounded-lg transition-colors duration-200 shadow-sm mt-2">
+            <Button size={"lg"} className="w-full">
               Login
-            </button>
+            </Button>
           </div>
         </div>
       )}
