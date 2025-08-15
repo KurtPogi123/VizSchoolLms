@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Custom CSS for fade-in animation */}
-      <style >{`
+      <style>{`
         @keyframes fadeInUp {
           from {
             opacity: 0;
