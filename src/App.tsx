@@ -8,8 +8,11 @@ import About from "./pages/about";
 
 import ContactUs from "./pages/ContactUs";
 
+import Blogs from "./pages/blogs";
+import FAQ from "./pages/faq";
 import Programmes from "./pages/programmes";
 import Reviews from "./pages/reviews";
+import Sitemap from "./pages/sitemap";
 
 // ScrollToTop component to handle navigation scrolling
 function ScrollToTop() {
@@ -33,9 +36,15 @@ function App() {
             <Route path="/" element={<Hero />} />
 
             <Route path="/about" element={<About />} />
-            <Route path="/ContactUs" element={<ContactUs />} />
+            <Route path="/contact-us" element={<ContactUs />} />
+
+            <Route path="/blogs" element={<Blogs />} />
 
             <Route path="/reviews" element={<Reviews />} />
+
+            <Route path="/sitemap" element={<Sitemap />} />
+
+            <Route path="/faq" element={<FAQ />} />
 
             <Route path="/our-programmes" element={<Programmes />} />
 

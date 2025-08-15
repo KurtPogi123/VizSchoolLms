@@ -2,8 +2,9 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import EnrollNowCTA, { EnrollNowCTAMobile } from "../components/programmes/enroll-now-cta";
 
-import FAQ from "../components/programmes/faq";
+import Courses from "../components/programmes/courses";
 import Hero from "../components/programmes/hero";
+import HowItWorks from "../components/programmes/how-it-works";
 import AnimatedMeshGradient from "../components/ui/animated-mesh-gradient";
 import { Button } from "../components/ui/button";
 
@@ -17,7 +18,8 @@ function Programmes() {
       <EnrollNowCTA />
       <EnrollNowCTAMobile />
       <Features />
-      <FAQ />
+      <Courses />
+      <HowItWorks />
     </>
   );
 }

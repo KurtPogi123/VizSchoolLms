@@ -1,8 +1,9 @@
 import { ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
-import { Badge } from "../ui/badge";
-import { Button } from "../ui/button";
-import { Card, CardContent, CardHeader } from "../ui/card";
+import MaxWidthWrapper from "../components/max-width-wrapper";
+import { Badge } from "../components/ui/badge";
+import { Button } from "../components/ui/button";
+import { Card, CardContent, CardHeader } from "../components/ui/card";
 
 const blogs = [
   {
@@ -73,9 +74,9 @@ const blogs = [
   },
 ];
 
-function Blog() {
+function Blogs() {
   return (
-    <div className="max-w-screen-xl mx-auto pb-28 pt-16 md:pt-20 md:pb-36 lg:pt-24 lg:pb-48 px-6 xl:px-0">
+    <MaxWidthWrapper className="max-w-screen-xl mx-auto py-16 md:py-20 lg:py-24">
       <motion.h2
         initial={{ translateY: 10, opacity: 0 }}
         whileInView={{ translateY: 0, opacity: 1 }}
@@ -115,12 +116,12 @@ function Blog() {
               </CardHeader>
               <CardContent className="py-6">
                 <div className="flex items-center gap-3">
-                  <Badge className="bg-primary/5 text-primary hover:bg-primary/5 shadow-none">{details.category}</Badge>
+                  <Badge variant={"outline"}>{details.category}</Badge>
                   <span className="font-medium text-xs text-muted-foreground">{details.readTime}</span>
                 </div>
 
                 <h3 className="mt-4 text-[1.35rem] font-semibold tracking-tight">{details.title}</h3>
-                <p className="mt-2 text-muted-foreground">{details.excerpt}</p>
+                <p className="mt-2 text-muted-foreground line-clamp-2">{details.excerpt}</p>
 
                 <Button size={"sm"} className="mt-6 shadow-none">
                   Read more <ChevronRight />
@@ -130,8 +131,8 @@ function Blog() {
           </motion.div>
         ))}
       </div>
-    </div>
+    </MaxWidthWrapper>
   );
 }
 
-export default Blog;
+export default Blogs;
